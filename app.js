@@ -25,7 +25,7 @@ app.get('/scrapeynews', function(req, res){
 	request(url, function(error, response, html){
 		if(error){
 			console.log(JSON.stringify(error));
-			console.log('fuck there was an error in scraping')
+			console.log('there was an error in scraping')
 		} else {
 			var $ = cheerio.load(html);
 		    var parsedResults = [];
@@ -70,7 +70,7 @@ app.get('/analyzeTechcrunchNews', function(req, res){
 	request(url, function(error, response, html){
 		if(error){
 			console.error(error);
-			console.log('techcrunch scrape went bad xD')
+			console.log('techcrunch scrape went bad')
 		} else {
 			var $ = cheerio.load(html);
 			console.log(($));
@@ -96,4 +96,4 @@ app.get('/scrape', function(req, res) {
 })
 
 app.listen('8080');
-console.log('listening on port 8080 hahaha')
+console.log('listening on port 8080')
